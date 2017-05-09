@@ -1,0 +1,1 @@
+app.controller("AddController",["$scope","$firebaseArray","$location","FBURL",function(r,o,c,d){r.addProduct=function(){var e=new Firebase(d),t=o(e);t.$add({sku:r.product.sku,description:r.product.description,price:r.product.price}),c.path("/")}}]);

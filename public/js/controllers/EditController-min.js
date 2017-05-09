@@ -1,0 +1,1 @@
+app.controller("EditController",["$scope","$location","$routeParams","$firebaseObject","FBURL",function(r,t,o,e,c){var i=new Firebase(c+o.id);r.product=e(i),r.editProduct=function(){r.product.$save({sku:r.product.sku,description:r.product.description,price:r.product.price}),r.edit_form.$setPristine(),r.product={},t.path("/products")}}]);

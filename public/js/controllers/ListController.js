@@ -1,0 +1,9 @@
+app.controller('ListController', ['$scope', '$firebaseArray', 'FBURL', '$firebaseObject', function($scope,$firebaseArray, FBURL){
+  var products = new Firebase(FBURL);
+  $scope.products = $firebaseArray(products);
+  $scope.removeProduct = function(id) {
+    var ref = new Firebase(FBURL + id);
+    var product = $firebaseObject(ref)
+    product.$remove();
+   };
+}]);
